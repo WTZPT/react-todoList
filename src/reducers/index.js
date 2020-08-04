@@ -3,6 +3,8 @@ import {
 } from 'redux'
 import todoReducer from './todoReducer'
 
-export default combineReducers({
+
+const reducer = combineReducers({
     todoReducer
 })
+export default  reducer
