@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
 import  DoingPage from './components/DoingPage'
-import {HashRouter,Route,Switch} from 'react-router-dom'
+import {HashRouter,Route,Switch,Link} from 'react-router-dom'
+
 import DonePageContainer from './containers/DonePageContainer'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+         
        <HashRouter>
          <Switch>
          <Route exact path="/" component={DoingPage}></Route>
