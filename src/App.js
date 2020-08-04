@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import  TodoFromContainer from './containers/TodoFromContainer'
+import TodoListContainer from './containers/TodoListContainer'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TodoListContainer></TodoListContainer>
         <TodoFromContainer></TodoFromContainer>
         <p>
           Edit <code>src/App.js</code> and save to reload.

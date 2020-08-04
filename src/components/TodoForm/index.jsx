@@ -9,9 +9,9 @@ class todoForm extends React.Component {
     }
 
     handleSubmit = (e) => {
+        e.preventDefault()
         this.props.addTodo(this.state.value)
-        this.setState({value:''})
-        e.preventDefault();
+        // this.setState({value:''})
     }
 
     handleChange = (e) => {
@@ -21,11 +21,11 @@ class todoForm extends React.Component {
 
      render(){
         return (
-            <form onSubmit={this.handleSubmit}>
+            <div >
                 <input type="text" name="" id="" value={this.state.value} 
                     placeholder="please input"  onChange={this.handleChange}/>
-                <input type="submit" value="提交"/>
-            </form>
+                <input type="submit" onClick={this.handleSubmit} value="提交"/>
+            </div>
         )
     }
 

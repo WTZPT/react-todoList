@@ -7,12 +7,11 @@ const defaultState = {
 }
 
 const todoReducer = (state = defaultState, action) => {
-    console.log(state)
     switch (action.type) {
         case ADD_TODO:
-            let todoTextList = state.todoTextList;
-            todoTextList.push(action.value) 
-            return Object.assign({},state,todoTextList);
+            let newState = JSON.parse(JSON.stringify(state))
+            newState.todoTextList.push(action.value)
+            return newState;
         default:
             return state;
     }
