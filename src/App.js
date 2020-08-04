@@ -3,17 +3,16 @@ import './App.css';
 import  DoingPage from './components/DoingPage'
 import {HashRouter,Route,Switch,Link} from 'react-router-dom'
 
-import DonePageContainer from './containers/DonePageContainer'
+import DonePage from './components/DonePage'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-         
+      <header className="App-header"> 
        <HashRouter>
          <Switch>
-         <Route exact path="/" component={DoingPage}></Route>
-         <Route exact path="/finish" component={DonePageContainer}></Route>
+            <Route exact path="/" component={DoingPage}></Route>
+            <Route exact path="/finish" component={DonePage}></Route>
          </Switch>
        </HashRouter>
         <p>
