@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import  DoingPage from './components/DoingPage'
-import DonePage from './components/DonePage'
 import {HashRouter,Route,Switch} from 'react-router-dom'
+import DonePageContainer from './containers/DonePageContainer'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
        <HashRouter>
          <Switch>
          <Route exact path="/" component={DoingPage}></Route>
-         <Route exact path="/finish" component={DonePage}></Route>
+         <Route exact path="/finish" component={DonePageContainer}></Route>
          </Switch>
        </HashRouter>
         <p>

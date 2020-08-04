@@ -9,10 +9,10 @@ class TodoList extends React.Component {
                     <TODO key={todo.id}
                         {...todo}
                         onClick={() => this.props.toggleTodo(todo.id)}
-                        deleteClick={()=> this.props.deleteClick(todo.id)}
+                        deleteClick={() => this.props.deleteClick(todo.id)}
                     ></TODO>
-        )
-    }
+                )
+                }
             </ul>
         )
     }

@@ -21,8 +21,15 @@ const generaterDeleteClickAction = id => ({
     id
 })
 
+const TodoListFilter = {
+    SHOW_ALL: 'SHOW_ALL',
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
+    SHOW_ACTIVE: 'SHOW_ACTIVE'
+}
+
 export {
     generaterAddToDoAction,
     generaterToggleTodoAction,
-    generaterDeleteClickAction
+    generaterDeleteClickAction,
+    TodoListFilter
 }
