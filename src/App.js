@@ -1,14 +1,19 @@
 import React from 'react';
 import './App.css';
-import  TodoFromContainer from './containers/TodoFromContainer'
-import TodoListContainer from './containers/TodoListContainer'
+import  DoingPage from './components/DoingPage'
+import DonePage from './components/DonePage'
+import {HashRouter,Route,Switch} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TodoListContainer></TodoListContainer>
-        <TodoFromContainer></TodoFromContainer>
+       <HashRouter>
+         <Switch>
+         <Route exact path="/" component={DoingPage}></Route>
+         <Route exact path="/finish" component={DonePage}></Route>
+         </Switch>
+       </HashRouter>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

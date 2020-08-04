@@ -1,8 +1,14 @@
 import React from 'react'
 
-const Todo = ({text}) => (
-    <li>
+const Todo = ({ onClick, text, completed ,deleteClick }) => (
+    <li
+        onClick={onClick}
+        style={{
+            textDecoration: completed ? 'line-through' : 'none'
+        }}
+    >
         {text}
+        <button onClick={deleteClick}>删除</button>
     </li>
 )
 

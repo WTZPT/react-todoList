@@ -6,8 +6,13 @@ class TodoList extends React.Component {
         return (
             <ul>
                 {this.props.todos.map((todo) =>
-                    <TODO text={todo}></TODO>
-                )}
+                    <TODO key={todo.id}
+                        {...todo}
+                        onClick={() => this.props.toggleTodo(todo.id)}
+                        deleteClick={()=> this.props.deleteClick(todo.id)}
+                    ></TODO>
+        )
+    }
             </ul>
         )
     }
