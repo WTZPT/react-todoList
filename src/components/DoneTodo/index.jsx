@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DoneTodo = ({ text, completed  }) => (
+const DoneTodo = ({ text, completed }) => (
     <li
         style={{
             textDecoration: completed ? 'line-through' : 'none'

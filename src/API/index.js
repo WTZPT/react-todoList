@@ -1,9 +1,9 @@
 import {
     MethodType,
     request
-} from '../promise'
+} from './promise'
 
-const basicUrl = "https://5e9ec500fb467500166c4658.mockapi.io/todos";
+const basicUrl = "http://localhost:3001/todos";
 
 // GET : /todos
 export const todoList = async () => {

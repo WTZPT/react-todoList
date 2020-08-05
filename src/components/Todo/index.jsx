@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Todo = ({ onClick, text, completed ,deleteClick }) => (
+const Todo = ({ onClick, text, completed, deleteClick }) => (
     <li
         onClick={onClick}
         style={{

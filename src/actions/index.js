@@ -1,7 +1,8 @@
 import {
     ADD_TODO,
     TOGGLE_TODO,
-    DELETE_TODO
+    DELETE_TODO,
+    ADD_MOCK_TODO
 } from '../reducers/constants'
 
 let uuid = 0
@@ -27,8 +28,15 @@ const TodoListFilter = {
     SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
+const generateAddMockToDoAction = todo => ({
+    id: uuid++,
+    type: ADD_MOCK_TODO,
+    todo
+})
+
 export {
     generaterAddToDoAction,
+    generateAddMockToDoAction,
     generaterToggleTodoAction,
     generaterDeleteClickAction,
     TodoListFilter

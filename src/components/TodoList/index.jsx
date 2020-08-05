@@ -1,7 +1,17 @@
 import TODO from '../Todo'
 import React from 'react'
+import { todoList } from '../../API/index'
 
 class TodoList extends React.Component {
+
+    componentWillMount() {
+        todoList().then(response => {
+            for (let todo of response.data) {
+                this.props.addTodoAction(todo)
+            }
+        })
+    }
+
     render() {
         return (
             <ul>
