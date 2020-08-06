@@ -6,16 +6,17 @@ import {
     generaterToggleTodoAction,
     generaterDeleteClickAction,
     generateAddMockToDoAction,
-    generateUpdateTodosAction
+    generateUpdateTodosAction,
+    generateRefreshStoreTodosAction
 } from '../actions'
 
-const mapStateToProps = (state) => ({
-    todos: state.todoReducer.todoTextList
-})
+const mapStateToProps = (state) => {
+    return {todos: state.todoReducer.todoTextList}
+}
 
 const mapDispatchToProps = (dispatch) => ({
     toggleTodo: id => dispatch(generaterToggleTodoAction(id)),
-    deleteClick: id => dispatch(generaterDeleteClickAction(id)),
+    refreshStoreTodos: () => dispatch(generateRefreshStoreTodosAction()),
     addTodoAction: todo => dispatch(generateAddMockToDoAction(todo)),
     updateTodos: todos => dispatch(generateUpdateTodosAction(todos))
 })

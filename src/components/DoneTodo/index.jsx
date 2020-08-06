@@ -13,7 +13,7 @@ const DoneTodo = ({ text, completed }) => (
             </span>
         </p>
     </div>
-   
+
 )
 
 export default DoneTodo;

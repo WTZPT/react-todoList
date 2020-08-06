@@ -5,7 +5,6 @@ import {
 import DoneTodoList from '../components/DoneToDoList'
 
 const mapStateToProps = state => {
-
     return {
         todos: state.todoReducer.todoTextList.filter(t => t.completed)
     }

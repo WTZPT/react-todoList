@@ -3,7 +3,8 @@ import {
     TOGGLE_TODO,
     DELETE_TODO,
     ADD_MOCK_TODO,
-    UPDATE_STORE_TODOS
+    UPDATE_STORE_TODOS,
+    REFRESH_STORE_TODOS
 } from '../reducers/constants'
 
 let uuid = 0
@@ -40,11 +41,16 @@ const generateUpdateTodosAction = todos => ({
     todos
 })
 
+const generateRefreshStoreTodosAction = () => ({
+    type: REFRESH_STORE_TODOS
+})
+
 export {
     generaterAddToDoAction,
     generateAddMockToDoAction,
     generaterToggleTodoAction,
     generaterDeleteClickAction,
     generateUpdateTodosAction,
+    generateRefreshStoreTodosAction,
     TodoListFilter
 }

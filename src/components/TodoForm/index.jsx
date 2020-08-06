@@ -1,5 +1,6 @@
 import React from 'react'
 import { Input, Button } from 'antd';
+import { addTodo } from '../../API'
 import 'antd/dist/antd.css'
 class todoForm extends React.Component {
 
@@ -9,13 +10,17 @@ class todoForm extends React.Component {
     }
 
     handleSubmit = (e) => {
+        addTodo({text:this.state.value}).then(response => {
+            if(response.data.code === "200"){
+                alert("添加成功！")
+                this.props.updateTodos(response.data.data)
+            }
+        })
         e.preventDefault()
-        this.props.addTodo(this.state.value)
         this.setState({ value: '' })
     }
 
     handleChange = (e) => {
-        console.log(e.target.value)
         this.setState({ value: e.target.value })
     }
 

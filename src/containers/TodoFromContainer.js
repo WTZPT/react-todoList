@@ -3,15 +3,15 @@ import {
     connect
 } from 'react-redux'
 import {
-    generaterAddToDoAction
+    generateRefreshStoreTodosAction,
+    generateUpdateTodosAction
 } from '../actions/index'
 
 const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => ({
-    addTodo: (todoText) => {
-        dispatch(generaterAddToDoAction(todoText))
-    }
+    refreshStoreTodos: () => dispatch(generateRefreshStoreTodosAction()),
+    updateTodos: todos => dispatch(generateUpdateTodosAction(todos))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)

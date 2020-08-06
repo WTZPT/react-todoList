@@ -10,6 +10,9 @@ export const todoList = async () => {
     return await request(basicUrl, MethodType.GET)
 }
 
+export const refreshStoreTodos = () =>{
+    return request(basicUrl, MethodType.GET)
+}
 //PUT： /todos/{id}
 export const updateTodo = async (id, body) => {
     let requestBody = JSON.stringify(body)

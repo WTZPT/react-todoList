@@ -8,7 +8,6 @@ class TodoList extends React.Component {
 
     componentWillMount() {
         todoList().then(response => {
-            console.log(response)
             this.props.updateTodos(response.data.data);
         })
     }
@@ -26,7 +25,8 @@ class TodoList extends React.Component {
                             <TODO
                                 {...todo}
                                 onClick={() => this.props.toggleTodo(todo.id)}
-                                deleteClick={() => this.props.deleteClick(todo.id)} >
+                                updateTodos={(todos) => this.props.updateTodos(todos)}
+                                refreshStoreTodos={() => this.props.refreshStoreTodos()} >
                             </TODO>
                         </List.Item>}
                 ></List>

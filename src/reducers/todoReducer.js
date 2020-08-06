@@ -3,12 +3,14 @@ import {
     TOGGLE_TODO,
     DELETE_TODO,
     ADD_MOCK_TODO,
-    UPDATE_STORE_TODOS
+    UPDATE_STORE_TODOS,
+    REFRESH_STORE_TODOS
 } from './constants'
 import {
     patchTodoStatus,
     addTodo,
-    deleteTodo
+    deleteTodo,
+    refreshStoreTodos
 } from '../API/index'
 const defaultState = {
     todoTextList: []
@@ -31,7 +33,9 @@ const todoReducer = (state = defaultState, action) => {
                 text: action.value,
                 completed: false
             }
-            addTodo({text:action.value}).then(response => {
+            addTodo({
+                text: action.value
+            }).then(response => {
                 console.log(response.data)
             })
             newState.todoTextList.push(todo)
@@ -52,8 +56,23 @@ const todoReducer = (state = defaultState, action) => {
             newState.todoTextList = newState.todoTextList.filter(todo => todo.id !== action.id);
             return newState
         case UPDATE_STORE_TODOS:
+            console.log("entry update syore todos ",action)
             newState.todoTextList = action.todos;
             return newState;
+        case REFRESH_STORE_TODOS:
+            console.log("entry REFRESH_STORE_TODOS")
+            let todoTextList;
+            refreshStoreTodos().then(response => {
+                console.log("secone", response)
+                console.log(response)
+                todoTextList = response.data.data;
+            })
+            //Object.assign(state,todoTextList)
+
+            console.log("========", todoTextList)
+            return {
+                todoTextList
+            };
         default:
             return state
     }
