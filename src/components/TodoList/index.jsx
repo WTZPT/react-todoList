@@ -1,29 +1,38 @@
 import TODO from '../Todo'
 import React from 'react'
 import { todoList } from '../../API/index'
-
+import 'antd/dist/antd.css'
+import './ToDoListStyle.css'
+import { List, Typography, Divider } from 'antd';
 class TodoList extends React.Component {
 
     componentWillMount() {
         todoList().then(response => {
-            for (let todo of response.data) {
-                this.props.addTodoAction(todo)
-            }
+            console.log(response)
+            this.props.updateTodos(response.data.data);
         })
     }
 
     render() {
         return (
-            <ul>
-                {this.props.todos.map((todo) =>
-                    <TODO key={todo.id}
-                        {...todo}
-                        onClick={() => this.props.toggleTodo(todo.id)}
-                        deleteClick={() => this.props.deleteClick(todo.id)}
-                    ></TODO>
-                )
-                }
-            </ul>
+            <div>
+                <Divider orientation="left"> <span className="fontStyle"> TODO List </span></Divider>
+                <List
+                    size="small"
+                    bordered
+                    dataSource={this.props.todos}
+                    renderItem={todo =>
+                        <List.Item>
+                            <TODO
+                                {...todo}
+                                onClick={() => this.props.toggleTodo(todo.id)}
+                                deleteClick={() => this.props.deleteClick(todo.id)} >
+                            </TODO>
+                        </List.Item>}
+                ></List>
+            </div>
+
+
         )
     }
 }

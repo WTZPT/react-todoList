@@ -1,0 +1,15 @@
+.fontStyle {
+    text-align:center; 
+    font-family:  "Microsoft YaHei";
+    font-size: 16px ;
+    color: rgb(252, 249, 249)
+}
+.deleteButtonStyle {
+    color: rgb(252, 249, 249)
+}
+.lineStyle {
+    color: mediumturquoise;
+}
+.spanStyle {
+    color: rgb(252, 249, 249)
+}

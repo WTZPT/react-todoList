@@ -4,7 +4,8 @@ export const MethodType = {
     GET: "GET",
     POST:"POST",
     PUT: "PUT",
-    DELETE: "DELETE" 
+    DELETE: "DELETE" ,
+    PATCH: "PATCH"
 }
 
 export const request = (api,method = MethodType.GET,params={},config={}) => {

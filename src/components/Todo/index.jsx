@@ -1,15 +1,18 @@
 import React from 'react'
+import { DeleteOutlined } from '@ant-design/icons';
+import './todoStyle.css'
 
 const Todo = ({ onClick, text, completed, deleteClick }) => (
-    <li
-        onClick={onClick}
-        style={{
-            textDecoration: completed ? 'line-through' : 'none'
-        }}
-    >
-        {text}
-        <button onClick={deleteClick}>删除</button>
-    </li>
+    <div className="fontStyle">
+        <p  className="lineStyle" style={{ textDecoration: completed ? 'line-through' : 'none' } }>
+            <span className="spanStyle" onClick={onClick}>
+                {text}
+            </span>   
+            <DeleteOutlined className="deleteButtonStyle" onClick={deleteClick} />
+        </p>       
+        
+    </div>
+
 )
 
 export default Todo;

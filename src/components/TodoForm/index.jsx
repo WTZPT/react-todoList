@@ -1,6 +1,6 @@
 import React from 'react'
-
-
+import { Input, Button } from 'antd';
+import 'antd/dist/antd.css'
 class todoForm extends React.Component {
 
     constructor(props) {
@@ -15,16 +15,17 @@ class todoForm extends React.Component {
     }
 
     handleChange = (e) => {
-
+        console.log(e.target.value)
         this.setState({ value: e.target.value })
     }
 
     render() {
         return (
-            <div >
-                <input type="text" name="" id="" value={this.state.value}
-                    placeholder="please input" onChange={this.handleChange} />
-                <input type="submit" onClick={this.handleSubmit} value="提交" />
+            <div>
+                <div>
+                    <Input value={this.state.value} onChange={this.handleChange} />
+                    <Button type="primary" onClick={this.handleSubmit} >提交 </Button>
+                </div>
             </div>
         )
     }

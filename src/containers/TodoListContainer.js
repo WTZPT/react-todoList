@@ -5,7 +5,8 @@ import {
 import {
     generaterToggleTodoAction,
     generaterDeleteClickAction,
-    generateAddMockToDoAction
+    generateAddMockToDoAction,
+    generateUpdateTodosAction
 } from '../actions'
 
 const mapStateToProps = (state) => ({
@@ -15,7 +16,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     toggleTodo: id => dispatch(generaterToggleTodoAction(id)),
     deleteClick: id => dispatch(generaterDeleteClickAction(id)),
-    addTodoAction: todo => dispatch(generateAddMockToDoAction(todo))
+    addTodoAction: todo => dispatch(generateAddMockToDoAction(todo)),
+    updateTodos: todos => dispatch(generateUpdateTodosAction(todos))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
